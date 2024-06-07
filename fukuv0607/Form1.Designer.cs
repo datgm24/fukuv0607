@@ -28,23 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(308, 175);
+            label1.Font = new Font("Yu Gothic UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(192, 145);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(105, 45);
             label1.TabIndex = 0;
             label1.Text = "label1";
+            label1.Click += label1_Click;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 20;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(696, 393);
+            ClientSize = new Size(463, 320);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
@@ -55,5 +65,6 @@
         #endregion
 
         private Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
