@@ -1,8 +1,10 @@
+using System.Net.WebSockets;
+
 namespace fukuv0607
 {
     public partial class Form1 : Form
     {
-        int vx = -4;
+        int vx = -8;
         int vy = -4;
 
         public Form1()
@@ -17,19 +19,19 @@ namespace fukuv0607
 
             if (label1.Left < 0)
             {
-                vx = -vx;
+                vx = Math.Abs(vx);
             }
             if (label1.Top < 0)
             {
-                vy = -vy;
+                vy = Math.Abs(vy);
             }
-            if (label1.Left > 358)
+            if (label1.Left + label1.Width > ClientSize.Width)
             {
-                vx = -vx;
+                vx = -Math.Abs(vx);
             }
-            if (label1.Top > 278)
+            if (label1.Top + label1.Height > ClientSize.Height)
             {
-                vy = -vy;
+                vy = -Math.Abs(vy);
             }
         }
 
